@@ -1,2 +1,2 @@
 Site for a client:
-  Currently being built out. Click: broad-knee.surge.sh
+  Currently being built out. Click: http://broad-knee.surge.sh/
