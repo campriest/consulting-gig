@@ -1,0 +1,74 @@
+.barOne {
+  position: absolute;
+  top: 170px;
+  margin-left: 85%;
+  height: 2px;
+  width: 50px;
+  background-color: rgb(255,255,255);
+
+}
+.barOne-enter{
+  margin-left: 85%;
+}
+
+.barOne-enter.barOne-enter-active {
+margin-left: 95%;
+transition: margin-left 500ms ease-out;
+}
+
+.barTwo {
+  position: absolute;
+  top : 180px;
+  marginLeft: 85%;
+  height: 2px;
+  width: 50px;
+  background-color: rgb(255,255,255);
+}
+
+.barThree {
+  position: absolute;
+  top : 190px;
+  marginLeft: 85%;
+  height: 2px;
+  width: 50px;
+  background-color: rgb(255,255,255);
+
+}
+
+
+.lineOne {
+  display: inline;
+  position: absolute;
+  margin-left: 75%;
+  width: 1px;
+  height: 100%;
+  background-color: rgb(255,255,255);
+}
+
+.lineTwo {
+  position: absolute;
+  margin-left: 50%;
+  width: 1px;
+  height: 100%;
+  background-color: rgb(255,255,255);
+
+}
+
+
+.lineThree {
+  position: absolute;
+  margin-left: 25%;
+  width: 1px;
+  height: 100%;
+  background-color: rgb(255,255,255);
+
+}
+
+.middleLine {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  background-color: rgb(255,255,255);
+
+}
