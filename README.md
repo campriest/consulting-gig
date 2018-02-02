@@ -4,8 +4,11 @@ Site for a client:
 
   Notes:
     Using:
+    
     -react-router
+    
     -react-move
+    
     -d3-ease
     
     
@@ -15,3 +18,7 @@ Site for a client:
   
   Update: 
   http://green-price.surge.sh/
+
+  Future:
+  
+  -Going to add wordpress backend.
