@@ -20,12 +20,15 @@ Site for a client:
     
   Currently being built out. 
   Click: 
+  
   http://broad-knee.surge.sh/
   
   Update: 
+  
   http://green-price.surge.sh/
   
   Update (02/07/2018/adding three.js elements to it):
+  
   http://chief-acoustics.surge.sh/
 
   Future:
