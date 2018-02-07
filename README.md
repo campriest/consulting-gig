@@ -11,6 +11,12 @@ Site for a client:
     
     -d3-ease
     
+    -react-three-renderer
+    
+    -three
+    
+    
+    
     
   Currently being built out. 
   Click: 
@@ -18,6 +24,9 @@ Site for a client:
   
   Update: 
   http://green-price.surge.sh/
+  
+  Update (02/07/2018/adding three.js elements to it):
+  http://chief-acoustics.surge.sh/
 
   Future:
   
