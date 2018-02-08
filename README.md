@@ -27,9 +27,14 @@ Site for a client:
   
   http://green-price.surge.sh/
   
-  Update (02/07/2018/adding three.js elements to it):
+  Update (02/07/2018/adding 'three.js elements to it'):
   
   http://chief-acoustics.surge.sh/
+  
+  
+  Update (02/08/2018 'add toggle to three.js element from child menu component'):
+  
+  http://great-light.surge.sh/
 
   Future:
   
