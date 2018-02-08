@@ -10,6 +10,7 @@ import { easeExpOut } from 'd3-ease';
 import Page from './Page.js';
 import Work  from './Work.js';
 import Home from './Home.js';
+
 //import Icon from './Icon.js';
 
 
@@ -128,12 +129,12 @@ class Menu extends Component{
     }
 
 
-    this.onMove = this.onMove.bind(this);
+    //this.onMove = this.onMove.bind(this);
 
   }
 
 
-  onMove () {
+  onMove = () => {
     this.setState({
       open: !this.state.open,
       display: !this.state.display
@@ -141,7 +142,7 @@ class Menu extends Component{
     });
 
     //console.log('works');
-
+    this.props.setState(this.state.open);
 
   }
 
@@ -231,11 +232,6 @@ class Menu extends Component{
 
                               }}
                             />
-
-
-
-
-
                         );
                     }}
 
@@ -278,11 +274,6 @@ class Menu extends Component{
 
                                 }}
                               />
-
-
-
-
-
                           );
                       }}
 
@@ -346,14 +337,8 @@ class Menu extends Component{
 
                                                       }}
                                                     />
-
-
-
                                                   );
                                               }}
-
-
-
 
                                           </Animate>
 
@@ -429,7 +414,8 @@ class Menu extends Component{
 
 
 
-                                {!this.state.display && <Page/>}
+                                  {!this.state.display && <Page/>}
+                                  
 
 
 

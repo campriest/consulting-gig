@@ -5,6 +5,9 @@ import Page from './Page.js';
 import './Home.css';
 import { easeExpOut } from 'd3-ease';
 import Animate from 'react-move/Animate';
+import Graph from './Graph';
+
+
 //import Animate from 'react-move/Animate';
 //import { easeExpOut } from 'd3-ease';
 
@@ -24,48 +27,32 @@ class Home extends Component{
 
   constructor(props){
     super(props);
-
       this.state = {
-
-          open: false
+        open: false
       }
-
-
   }
 
-    handleClick = () => {
 
-        this.setState ({
+//call back for parent to child
+    getState = (state) => {
+        this.setState({
 
-            open: !this.state.open
+            open: !state
 
-        });
-
+        })
     }
 
 
   render(){
-
       return(
         <div>
-
             <div style = {homeBackground}>
+              {!this.state.open && <Graph/>}
             </div>
-
-
-
-
-
-                                              <Menu/>
-
-
-            </div>
-
-
+              <Menu setState = {this.getState}/>
+        </div>
       );
-
   }
-
 }
 
 
