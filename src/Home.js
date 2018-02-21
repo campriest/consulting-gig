@@ -17,8 +17,8 @@ import Graph from './Graph';
 
 const homeBackground = {
 position: 'absolute',
-width: '100%',
-height: '100%',
+width: '50%',
+height: '50%',
 backgroundColor: 'rgb(0,0,0)'
 }
 
@@ -32,24 +32,22 @@ class Home extends Component{
       }
   }
 
-
 //call back for parent to child
-    getState = (state) => {
-        this.setState({
-
-            open: !state
-
-        })
-    }
+    // getState = (state) => {
+    //     this.setState({
+    //         open: !state
+    //     })
+    // }
 
 
   render(){
       return(
-        <div>
-            <div style = {homeBackground}>
-              {!this.state.open && <Graph/>}
-            </div>
-              <Menu setState = {this.getState}/>
+        <div><Graph/>
+            // <div style = {homeBackground}>
+            //
+            //
+            // </div>
+
         </div>
       );
   }

@@ -7,6 +7,7 @@ import Contact from './Contact.js';
 import Client from './Client.js';
 import Strategy from './Strategy.js';
 import Insights from './Insights.js';
+import Menu from './Menu.js';
 
 import { BrowserRouter,Router, Route, Switch, Link } from 'react-router-dom';
 
@@ -17,22 +18,19 @@ class App extends Component {
   render() {
     return (
 
-      <BrowserRouter>
+      <div>
 
-        <Switch>
-          <Route exact path = "/" component = {Home}/>
-          <Route path = "/work" component = {Work}/>
-          <Route path = "/about" component = {About}/>
-          <Route path = "/contact" component = {Contact}/>
-          <Route path = "/client" component = {Client}/>
-          <Route path = "/strategy" component = {Strategy}/>
-          <Route path = "/insights" component = {Insights}/>
+          <Switch>
+            <Route exact path = "/" component = {Home}/>
+            <Route exact path = "/work" component = {Work}/>
+            <Route exact path = "/about" component = {About}/>
+            <Route exact path = "/contact" component = {Contact}/>
+            <Route exact path = "/client" component = {Client}/>
+            <Route exact path = "/strategy" component = {Strategy}/>
+            <Route exact path = "/insights" component = {Insights}/>
         </Switch>
-
-      </BrowserRouter>
-
-
-
+        <Menu/>
+      </div>
 
     );
   }

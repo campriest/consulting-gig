@@ -12,16 +12,21 @@ import Work  from './Work.js';
 import Home from './Home.js';
 
 //import Icon from './Icon.js';
+// const menuBackground = {
+//   position: 'absolute',
+//   width: '100%',
+//   height: '100%',
+//   backgroundColor: 'rgb(0,0,0)'
+// }
 
-
-var boxStyle = {
+const boxStyle = {
   position: 'absolute',
   marginLeft: '85%',
   width: '200px',
   height: '200px'
 }
 
-var barOne = {
+const barOne = {
   position: 'absolute',
   top: '170px',
   marginLeft: '85%',
@@ -31,8 +36,7 @@ var barOne = {
 
 }
 
-
-var barTwo = {
+const barTwo = {
   position: 'absolute',
   top : '180px',
   marginLeft: '6px',
@@ -40,8 +44,7 @@ var barTwo = {
   width: '50px',
   backgroundColor: 'rgb(255,255,255)',
 }
-
-var barThree = {
+const barThree = {
   position: 'absolute',
   top : '190px',
   marginLeft: '6px',
@@ -50,8 +53,7 @@ var barThree = {
   backgroundColor: 'rgb(255,255,255)'
 
 }
-
-var workMenu = {
+const workMenu = {
   position: 'absolute',
   top: '160px',
   marginLeft: '10%' ,
@@ -61,9 +63,7 @@ var workMenu = {
   fontFamily:'Montserrat'
 }
 
-
-
-var aboutMenu = {
+const aboutMenu = {
   position: 'absolute',
   top: '160px',
   marginLeft: '33%',
@@ -74,7 +74,7 @@ var aboutMenu = {
 
 }
 
-var contactMenu = {
+const contactMenu = {
   position: 'absolute',
   top: '160px',
   marginLeft: '58%',
@@ -86,7 +86,7 @@ var contactMenu = {
 
 }
 
-var clientMenu = {
+const clientMenu = {
   position: 'absolute',
   top: '460px',
   marginLeft: '10%',
@@ -96,7 +96,7 @@ var clientMenu = {
   fontFamily: 'Montserrat'
 }
 
-var strategyMenu = {
+const strategyMenu = {
   position: 'absolute',
   top: '460px',
   marginLeft: '33%',
@@ -106,8 +106,7 @@ var strategyMenu = {
   fontFamily: 'Montserrat'
 }
 
-
-var insightMenu = {
+const insightMenu = {
   position: 'absolute',
   top: '460px',
   marginLeft: '58%',
@@ -116,7 +115,6 @@ var insightMenu = {
   color: 'rgb(255, 255,255)',
   fontFamily: 'Montserrat'
 }
-
 
 class Menu extends Component{
   constructor(props){
@@ -127,35 +125,54 @@ class Menu extends Component{
         display: false
 
     }
-
-
     //this.onMove = this.onMove.bind(this);
-
   }
 
 
   onMove = () => {
     this.setState({
       open: !this.state.open,
-      display: !this.state.display
+      display: !this.state.display,
 
     });
-
+    console.log('works');
     //console.log('works');
-    this.props.setState(this.state.open);
+    //this.props.setState(this.state.open);
 
   }
 
 
 
-
     render(){
-
-
-
         return(
 
             <div>
+              
+              <Animate
+                  start = {() => ({
+                    x: 0,
+
+                  })}
+                  update = {() => ({
+                    x: [this.state.display ? 100 : 0],
+                    timing: {duration: 900, ease: easeExpOut}
+                  })}
+              >
+              {(state) =>{
+                  const { x } = state;
+
+                  return (
+                    <div style = {{
+                      position: 'absolute',
+                      width: '100%',
+                      height: `${x}%`,
+                      backgroundColor: 'rgb(0,0,0)'
+
+                      }}
+                      />
+                  );
+                }}
+              </Animate>
               <Animate
                   start = {() => ({
 
@@ -187,10 +204,6 @@ class Menu extends Component{
 
                             }}
                           />
-
-
-
-
 
                       );
                   }}
@@ -398,24 +411,20 @@ class Menu extends Component{
                    </Animate>
 
 
-                                //togles for menu can def rewrite function
 
 
 
 
-                                  {this.state.display && <div style = {workMenu}><h1><Link to = "/work" style = {{textDecoration: 'none', color: 'rgb(255,255,255)' }}>Work</Link></h1></div>}
-                                  {this.state.display && <div style = {aboutMenu}><h1><Link to = "/about" style = {{textDecoration: 'none', color: 'rgb(255,255,255)' }}>About</Link></h1></div>}
-                                  {this.state.display && <div style = {contactMenu}><h1><Link to = "/contact" style = {{textDecoration: 'none', color: 'rgb(255,255,255)' }}>Contact</Link></h1></div>}
-                                  {this.state.display && <div style = {clientMenu}><h1><Link to = "/client" style = {{textDecoration: 'none', color: 'rgb(255,255,255)' }}>Client</Link></h1></div>}
-                                  {this.state.display && <div style = {strategyMenu}><h1><Link to = "/strategy" style = {{textDecoration: 'none', color: 'rgb(255,255,255)' }}>Strategy</Link></h1></div>}
-                                  {this.state.display && <div style = {insightMenu}><h1><Link to = "/insights" style = {{textDecoration: 'none', color: 'rgb(255,255,255)' }}>Insights</Link></h1></div>}
 
-
-
-
+                                  {this.state.display && <div style = {workMenu} onClick = {this.onMove}><h1><Link to = "/work" style = {{textDecoration: 'none', color: 'rgb(255,255,255)' }}>Work</Link></h1></div>}
+                                  {this.state.display && <div style = {aboutMenu} onClick = {this.onMove}><h1><Link to = "/about" style = {{textDecoration: 'none', color: 'rgb(255,255,255)' }}>About</Link></h1></div>}
+                                  {this.state.display && <div style = {contactMenu} onClick = {this.onMove}><h1><Link to = "/contact" style = {{textDecoration: 'none', color: 'rgb(255,255,255)' }}>Contact</Link></h1></div>}
+                                  {this.state.display && <div style = {clientMenu} onClick = {this.onMove}><h1><Link to = "/client" style = {{textDecoration: 'none', color: 'rgb(255,255,255)' }}>Client</Link></h1></div>}
+                                  {this.state.display && <div style = {strategyMenu} onClick = {this.onMove}><h1><Link to = "/strategy" style = {{textDecoration: 'none', color: 'rgb(255,255,255)' }}>Strategy</Link></h1></div>}
+                                  {this.state.display && <div style = {insightMenu} onClick = {this.onMove}><h1><Link to = "/insights" style = {{textDecoration: 'none', color: 'rgb(255,255,255)' }}>Insights</Link></h1></div>}
 
                                   {!this.state.display && <Page/>}
-                                  
+
 
 
 
